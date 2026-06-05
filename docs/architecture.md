@@ -224,13 +224,3 @@ GAME BALANCE RULES
 - Endgame progression is horizontal, not vertical
 - World events continuously reshape meta
 
-https://github.com/kodcumemo/cos-mmorpg.git
-
-
-echo "# cos-mmorpg" >> README.md
-git init
-git add README.md
-git commit -m "first commit"
-git branch -M main
-git remote add origin https://github.com/kodcumemo/cos-mmorpg.git
-git push -u origin main
