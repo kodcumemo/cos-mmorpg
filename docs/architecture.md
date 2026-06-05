@@ -213,3 +213,24 @@ LibGDX ekranları.
 * Kod tekrarından kaçınılacak.
 * Her sınıfın tek sorumluluğu olacak.
 * Genişletilebilir mimari tercih edilecek.
+
+GAME BALANCE RULES
+
+- No one-shot kills in PvP
+- Maximum item power gap %20
+- Combat allows escape even in 1v3
+- Control effects are limited and non-chainable
+- Items increase build diversity, not raw power
+- Endgame progression is horizontal, not vertical
+- World events continuously reshape meta
+
+https://github.com/kodcumemo/cos-mmorpg.git
+
+
+echo "# cos-mmorpg" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/kodcumemo/cos-mmorpg.git
+git push -u origin main
