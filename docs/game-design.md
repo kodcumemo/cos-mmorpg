@@ -114,3 +114,30 @@ Never from payments.
 - Build diversity is preferred over raw power.
 - Event systems must continuously create new goals.
 - The strongest player should not reliably defeat three equally skilled players at once.
+
+## Monetization Architecture
+
+Player power and monetization systems are separated.
+
+Combat power is determined by:
+
+- Skills
+- Equipment
+- Character Stats
+- Buffs
+
+Combat power is never determined by:
+
+- Advertisements
+- Premium Membership
+- Real Money Purchases
+
+Monetization systems use:
+
+- Support Wallet
+- Premium Account
+- Cosmetic Rewards
+- Decoration Rewards
+
+These systems must never affect combat balance.
+
