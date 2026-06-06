@@ -224,3 +224,37 @@ GAME BALANCE RULES
 - Endgame progression is horizontal, not vertical
 - World events continuously reshape meta
 
+- Güç artışı sınırlı olacak.
+- Itemlerde maksimum 5 özellik olacak.
+- Oyuncular build çeşitliliği ile güçlenecek.
+- En güçlü oyuncu bile 3 oyuncuya karşı dikkatli oynamak zorunda olacak.
+- Dungeon ödülleri güç patlaması oluşturmayacak.
+- Event sistemi sürekli aktif olacak.
+- Oyuncu ekonomisi craft sistemi ile desteklenecek.
+- Item durability sistemi olacak.
+- Oyuncu şehirleri ve ev sistemi desteklenecek.
+
+1. Enumların kesin listesi
+2. Stat sistemi
+3. Skill sistemi
+4. ItemProperty sistemi
+5. Combat formülleri
+6. World / TileMap sistemi
+7. Sunucu mimarisi
+
+Strength ne işe yarıyor?
+Dexterity ne işe yarıyor?
+Swordsmanship hasara ne kadar etki ediyor?
+Armor hasarı nasıl azaltıyor?
+
+## Monetization Rules
+
+- No pay-to-win.
+- No power rewards from advertisements.
+- No skill rewards from advertisements.
+- No rare items from advertisements.
+- Advertisements provide cosmetic and support rewards only.
+- Premium membership provides convenience, not power.
+
+
+
