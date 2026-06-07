@@ -141,3 +141,50 @@ Monetization systems use:
 
 These systems must never affect combat balance.
 
+Entity System
+Item System
+Property System
+Material System
+Skill System
+Profession System
+Inventory System
+Quest System
+Action System
+Interaction System
+Guild System
+Faction System
+Housing System
+Ship System
+Economy System
+Trade System
+Marketplace System
+Mail System
+Reputation System
+Achievement System
+Title System
+World Event System
+Analytics System
+Monetization System
+
+
+✔️ Ekonomi Sistemi
+MarketListing (oyuncu satışları)
+Trade (oyuncu-oyuncu takas)
+MarketPlace (ada merkezi ekonomi)
+Auction altyapısı (gelecek genişleme için hazır)
+✔️ Tasarım Kararları (Sabitlendi)
+x, y, z koordinat sistemi
+Her şey ID üzerinden bağlanacak
+Template / Instance ayrımı zorunlu
+Sistemler genişletilebilir veri modeli olacak (code-first değil data-first MMO)
+📌 Yarın (4. Gün) Planı
+
+Combat sistemine geçerken şunları netleştireceğiz:
+
+Skill → damage ilişkisi
+Item → stat scaling (çok düşük stat sistemi)
+PvP / PvE ayrımı
+Targeting sistemi (click / auto / range)
+Combat mode (safe / war / duel)
+Death / respawn / loot rules
+Anti snowball balance (tek oyuncu 3 kişiyi ezemesin kuralı)

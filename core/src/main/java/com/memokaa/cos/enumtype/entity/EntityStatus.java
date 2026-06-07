@@ -1,25 +1,23 @@
 package com.memokaa.cos.enumtype.entity;
 
 /**
- * Canlı varlıkların anlık durumları.
+ * Canlı varlıkların durumu.
  */
 public enum EntityStatus {
 
-    /** Hayatta */
     ALIVE,
 
-    /** Ölü */
     DEAD,
 
-    /** Ölümsüz */
-    IMMORTAL,
+    UNCONSCIOUS,
 
-    /** Zehir etkisinde */
-    POISONED,
+    INVULNERABLE,
 
-    /** Hareket edemez */
-    PARALYZED,
+    STUNNED,
 
-    /** Sersemletilmiş */
-    STUNNED
+    ROOTED,
+
+    INVISIBLE,
+
+    OFFLINE
 }
