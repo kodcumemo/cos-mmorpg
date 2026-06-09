@@ -1,4 +1,8 @@
 package com.memokaa.cos.enumtype.combat;
 
-public class WarMode {
+public enum WarMode {
+
+    PEACE,         // Barış
+
+    WAR            // Savaş
 }
