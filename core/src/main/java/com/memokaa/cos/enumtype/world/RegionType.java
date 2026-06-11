@@ -1,33 +1,17 @@
 package com.memokaa.cos.enumtype.world;
 
 /**
- * Bölge Türleri
+ * Bölge iklim tipi
  */
 public enum RegionType {
 
-    STARTER_AREA,       // Başlangıç
+    TEMPERATE,     // Ilıman
 
-    CITY,               // Şehir
+    DESERT,        // Çöl
 
-    VILLAGE,            // Köy
+    TROPICAL,      // Tropikal
 
-    PORT,               // Liman
+    ARCTIC,        // Kutup
 
-    FARM_AREA,          // Tarım
-
-    FOREST,             // Orman
-
-    MOUNTAIN,           // Dağ
-
-    MINE,               // Maden
-
-    SEA,                // Deniz
-
-    ISLAND,             // Ada
-
-    DUNGEON,            // Zindan
-
-    BOSS_AREA,          // Boss Bölgesi
-
-    EVENT_AREA          // Etkinlik Alanı
+    VOLCANIC       // Volkanik
 }

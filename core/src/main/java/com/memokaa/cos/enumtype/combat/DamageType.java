@@ -1,20 +1,25 @@
 package com.memokaa.cos.enumtype.combat;
 
+/**
+ * Hasar türleri
+ */
 public enum DamageType {
 
-    PHYSICAL,      // Fiziksel
+    PHYSICAL,       // Fiziksel
 
-    RANGED,        // Ok / Yay
+    PIERCE,         // Delici
 
-    MAGIC,         // Büyü
+    BLUNT,          // Ezici
 
-    FIRE,          // Ateş
+    FIRE,           // Ateş
 
-    ICE,           // Buz
+    ICE,            // Buz
 
-    LIGHTNING,     // Yıldırım
+    LIGHTNING,      // Yıldırım
 
-    POISON,        // Zehir
+    POISON,         // Zehir
 
-    BLEED          // Kanama
+    ARCANE,         // Gizemli büyü
+
+    BLEED           // Kanama
 }

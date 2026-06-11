@@ -1,36 +1,100 @@
 package com.memokaa.cos.gameobject.player;
 
-import com.memokaa.cos.gameobject.base.LivingEntity;
+import java.util.ArrayList;
+import java.util.List;
 
-public class Player extends LivingEntity {
+import com.memokaa.cos.enumtype.movement.MovementType;
+import com.memokaa.cos.gameobject.base.GameObject;
+import com.memokaa.cos.gameobject.inventory.Equipment;
+import com.memokaa.cos.gameobject.inventory.Inventory;
 
-    // Hesap
 
+public class Player extends GameObject {
+
+    // Hesap kimliği
     public String accountId;
 
-    // Faction
+    // Karakter adı
+    public String characterName;
 
+    // Ülke
     public String factionId;
 
-    // Guild
-
+    // Lonca
     public String guildId;
 
     // Ada
-
     public String islandId;
 
-    // Envanter
+    // Can
+    public int health;
 
-    public String inventoryId;
+    // Maksimum can
+    public int maxHealth;
 
-    // Para
+    // Mana
+    public int mana;
 
+    // Maksimum mana
+    public int maxMana;
+
+    // Stamina
+    public int stamina;
+
+    // Maksimum stamina
+    public int maxStamina;
+
+    // Altın
     public long gold;
 
-    public long premiumCurrency;
+    // Aktif savaş modu
+    public boolean warMode;
 
-    // Son giriş
+    // Ölü mü
+    public boolean dead;
 
-    public long lastLoginDate;
+    // Son saldıran
+    public String lastAttackerId;
+
+    // Aktif pet
+    public String activePetId;
+
+    // Aktif binek
+    public String activeMountId;
+
+    // Aktif gemi
+    public String activeShipId;
+
+    // Sahip olduğu evler
+    public List<String> houseIds = new ArrayList<>();
+
+    // Sahip olduğu petler
+    public List<String> petIds = new ArrayList<>();
+
+    // Sahip olduğu binekler
+    public List<String> mountIds = new ArrayList<>();
+
+    // Sahip olduğu gemiler
+    public List<String> shipIds = new ArrayList<>();
+    public Inventory inventory;
+
+    public Equipment equipment;
+
+    public String bankId;
+
+    // Hareket durumu
+    public MovementType movementType;
+
+    // Hareket ediyor mu
+    public boolean moving;
+
+    // Hedef koordinat
+    public float targetX;
+
+    public float targetY;
+
+    public float targetZ;
+
+    public float visionRange;
+
 }

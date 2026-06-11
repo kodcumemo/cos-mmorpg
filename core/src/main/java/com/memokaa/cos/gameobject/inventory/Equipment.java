@@ -2,35 +2,36 @@ package com.memokaa.cos.gameobject.inventory;
 
 public class Equipment {
 
-    // Ekipman Kimliği
-    public String id;
-
-    // Sahip Oyuncu
-    public String ownerPlayerId;
-
-    // Slotlar
-
-    public String headItemId;
-
-    public String chestItemId;
-
-    public String legsItemId;
-
-    public String feetItemId;
-
-    public String handsItemId;
-
+    // Ana el
     public String mainHandItemId;
 
+    // Yan el
     public String offHandItemId;
 
-    public String ring1ItemId;
+    // Kafa
+    public String headItemId;
 
-    public String ring2ItemId;
+    // Göğüs
+    public String chestItemId;
 
+    // Bacak
+    public String legsItemId;
+
+    // Ayak
+    public String feetItemId;
+
+    // Eldiven
+    public String glovesItemId;
+
+    // Pelerin
+    public String cloakItemId;
+
+    // Kolye
     public String necklaceItemId;
 
-    public String braceletItemId;
+    // Yüzük 1
+    public String ring1ItemId;
 
-    public String costumeItemId;
+    // Yüzük 2
+    public String ring2ItemId;
 }

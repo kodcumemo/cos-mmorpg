@@ -5,21 +5,15 @@ import java.util.List;
 
 public class Inventory {
 
-    // Envanter Kimliği
-    public String id;
+    // Sahibi
+    public String ownerId;
 
-    // Sahip Oyuncu
-    public String ownerPlayerId;
+    // Maksimum ağırlık
+    public double maxWeight;
 
-    // Maksimum Slot
-    public int maxSlotCount;
+    // Mevcut ağırlık
+    public double currentWeight;
 
-    // Maksimum Ağırlık
-    public int maxWeight;
-
-    // Mevcut Ağırlık
-    public int currentWeight;
-
-    // Slotlar
-    public List<String> inventorySlotIds = new ArrayList<>();
+    // İçindeki itemler
+    public List<String> itemInstanceIds = new ArrayList<>();
 }

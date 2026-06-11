@@ -1,12 +1,13 @@
 package com.memokaa.cos.gameobject.item;
 
-import com.memokaa.cos.enumtype.item.ItemPropertyType;
-
+/**
+ * Item özelliği
+ */
 public class ItemProperty {
 
-    public String propertyId;
+    // Property tipi
+    public String propertyTypeId;
 
-    public ItemPropertyType propertyType;
-
-    public int value;
+    // Property değeri
+    public double value;
 }

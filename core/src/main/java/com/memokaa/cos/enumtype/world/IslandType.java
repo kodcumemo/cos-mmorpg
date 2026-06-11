@@ -1,23 +1,19 @@
 package com.memokaa.cos.enumtype.world;
 
 /**
- * Ada Türleri
+ * Ada tipi
  */
 public enum IslandType {
 
-    PRIVATE_ISLAND,         // Oyuncu Adası
+    SMALL,         // Küçük ada
 
-    GUILD_ISLAND,           // Lonca Adası
+    MEDIUM,        // Orta ada
 
-    PUBLIC_ISLAND,          // Ortak Ada
+    LARGE,         // Büyük ada
 
-    TRADE_ISLAND,           // Ticaret Adası
+    GUILD,         // Lonca adası
 
-    CAPITAL_ISLAND,         // Başkent Adası
+    EVENT,         // Etkinlik adası
 
-    EVENT_ISLAND,           // Etkinlik Adası
-
-    DUNGEON_ISLAND,         // Zindan Adası
-
-    PVP_ISLAND              // PvP Adası
+    DUNGEON        // Zindan adası
 }

@@ -14,13 +14,13 @@ public abstract class GameObject {
 
     public String description;
 
-    // Dünya Pozisyonu
 
     // Dünya koordinatları
     public float x;      // X koordinatı
     public float y;      // Y koordinatı
     public float z;      // Z koordinatı
-
+    // Objenin baktığı yön
+    public float rotation;
     // Boyut
 
     public float width;

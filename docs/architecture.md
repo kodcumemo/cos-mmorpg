@@ -256,5 +256,19 @@ Armor hasarı nasıl azaltıyor?
 - Advertisements provide cosmetic and support rewards only.
 - Premium membership provides convenience, not power.
 
+Skill Max = 100
 
+Skill OverCap = 120
+
+Global Skill Cap = 700
+
+Global OverCap = 720
+
+Item Skill Bonus = Ayrı
+
+Power Scroll = Var
+
+Skill Unlock = Var
+
+Special Attack Unlock = Var
 

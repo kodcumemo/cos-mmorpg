@@ -31,4 +31,12 @@ public class ItemInstance {
     public long createDate;
 
     public List<ItemProperty> properties = new ArrayList<>();
+    // Bulunduğu konteyner
+    public String containerId;
+
+    // Kilitli mi
+    public boolean locked;
+
+    // Pazarda mı
+    public boolean listedOnMarket;
 }

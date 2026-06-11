@@ -1,27 +1,32 @@
 package com.memokaa.cos.gameobject.trade;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Trade {
 
-    // Takas ID
+    // Takas kimliği
     public String id;
 
-    // Oyuncu 1
-    public String player1Id;
+    // Oyuncu A
+    public String playerAId;
 
-    // Oyuncu 2
-    public String player2Id;
+    // Oyuncu B
+    public String playerBId;
 
-    // Durum
-    public String status;
-    // PENDING / ACCEPTED / CANCELLED / COMPLETED
+    // Oyuncu A teklifleri
+    public List<String> playerAItemIds = new ArrayList<>();
 
-    // Altın değişimi
-    public long player1GoldOffer;
-    public long player2GoldOffer;
+    // Oyuncu B teklifleri
+    public List<String> playerBItemIds = new ArrayList<>();
 
-    // Oluşturulma
-    public long createDate;
+    // Altın teklifleri
+    public long playerAGold;
 
-    // Onay zamanı
-    public long confirmDate;
+    public long playerBGold;
+
+    // Onaylar
+    public boolean playerAAccepted;
+
+    public boolean playerBAccepted;
 }

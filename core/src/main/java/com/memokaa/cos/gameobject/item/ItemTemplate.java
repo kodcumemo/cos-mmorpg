@@ -1,42 +1,28 @@
 package com.memokaa.cos.gameobject.item;
 
-import com.memokaa.cos.enumtype.item.ItemCategory;
-import com.memokaa.cos.enumtype.item.ItemRarity;
+import java.util.ArrayList;
+import java.util.List;
+
 import com.memokaa.cos.enumtype.item.ItemType;
+import com.memokaa.cos.gameobject.template.ObjectTemplate;
 
-public class ItemTemplate {
+public class ItemTemplate extends ObjectTemplate {
 
-    public String itemTemplateId;
-
-    public String name;
-
-    public String description;
-
+    // Item tipi
     public ItemType itemType;
 
-    public ItemCategory itemCategory;
-
-    public ItemRarity rarity;
-
-    public float weight;
-
+    // Stacklenebilir mi
     public boolean stackable;
 
+    // Maksimum stack miktarı
     public int maxStack;
 
-    public boolean tradable;
-
-    public boolean droppable;
-
-    public boolean destroyable;
-
-    public boolean repairable;
-
-    public boolean durabilityEnabled;
-
+    // Maksimum dayanıklılık
     public int maxDurability;
 
-    public String iconId;
+    // Ağırlık
+    public double weight;
 
-    public String spriteId;
+    // Temel özellikler
+    public List<ItemProperty> properties = new ArrayList<>();
 }
