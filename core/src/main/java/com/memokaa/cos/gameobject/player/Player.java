@@ -1,100 +1,42 @@
 package com.memokaa.cos.gameobject.player;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
-import com.memokaa.cos.enumtype.movement.MovementType;
-import com.memokaa.cos.gameobject.base.GameObject;
-import com.memokaa.cos.gameobject.inventory.Equipment;
 import com.memokaa.cos.gameobject.inventory.Inventory;
+import com.memokaa.cos.gameobject.living.LivingEntity;
+import com.memokaa.cos.gameobject.skill.SkillInstance;
 
+public class Player extends LivingEntity {
 
-public class Player extends GameObject {
-
-    // Hesap kimliği
+    // Oyuncu hesabı
     public String accountId;
 
-    // Karakter adı
-    public String characterName;
+    // Oyuncu adı
+    public String playerName;
 
-    // Ülke
-    public String factionId;
+    // Aktif skilller
+    public Map<String, SkillInstance> skills;
 
-    // Lonca
-    public String guildId;
-
-    // Ada
-    public String islandId;
-
-    // Can
-    public int health;
-
-    // Maksimum can
-    public int maxHealth;
-
-    // Mana
-    public int mana;
-
-    // Maksimum mana
-    public int maxMana;
-
-    // Stamina
-    public int stamina;
-
-    // Maksimum stamina
-    public int maxStamina;
+    // Tecrübe
+    public long experience;
 
     // Altın
     public long gold;
 
-    // Aktif savaş modu
-    public boolean warMode;
-
-    // Ölü mü
-    public boolean dead;
-
-    // Son saldıran
-    public String lastAttackerId;
-
-    // Aktif pet
-    public String activePetId;
-
-    // Aktif binek
-    public String activeMountId;
-
-    // Aktif gemi
-    public String activeShipId;
-
-    // Sahip olduğu evler
-    public List<String> houseIds = new ArrayList<>();
-
-    // Sahip olduğu petler
-    public List<String> petIds = new ArrayList<>();
-
-    // Sahip olduğu binekler
-    public List<String> mountIds = new ArrayList<>();
-
-    // Sahip olduğu gemiler
-    public List<String> shipIds = new ArrayList<>();
+    // Envanter
     public Inventory inventory;
-
-    public Equipment equipment;
-
-    public String bankId;
-
-    // Hareket durumu
-    public MovementType movementType;
-
-    // Hareket ediyor mu
-    public boolean moving;
-
-    // Hedef koordinat
-    public float targetX;
-
-    public float targetY;
-
-    public float targetZ;
-
-    public float visionRange;
-
+    // Toplam skill limiti
+    /**
+     * Toplam skill limiti.
+     *
+     * Başlangıç:
+     * 700
+     *
+     * Skill scroll ile:
+     * 720
+     * 740
+     * 760
+     */
+    public double skillCap = 700.0;
 }

@@ -1,6 +1,10 @@
 package com.memokaa.cos.gameobject.monster;
 
 import com.memokaa.cos.gameobject.base.GameObject;
+import com.memokaa.cos.gameobject.effect.ActiveStatusEffect;
+import com.memokaa.cos.gameobject.equipment.EquipmentContainer;
+
+import java.util.List;
 
 public class Monster extends GameObject {
 
@@ -28,18 +32,21 @@ public class Monster extends GameObject {
     // Hedef
     public String targetId;
 
-    // Doğduğu yer X
-    public float spawnX;
+    // Doğduğu x
+    public double spawnX;
 
-    // Doğduğu yer Y
-    public float spawnY;
+    // Doğduğu y
+    public double spawnY;
 
-    // Doğduğu yer Z
-    public float spawnZ;
+    // Doğduğu z
+    public double spawnZ;
 
     // Ölü mü
     public boolean dead;
 
     // Son vurulan zaman
     public long lastCombatTime;
+    public EquipmentContainer equipment;
+    public List<ActiveStatusEffect> activeEffects;
+
 }

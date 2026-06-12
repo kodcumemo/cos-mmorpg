@@ -1,6 +1,7 @@
 package com.memokaa.cos.gameobject.mount;
 
 import com.memokaa.cos.gameobject.base.GameObject;
+import com.memokaa.cos.gameobject.equipment.EquipmentContainer;
 
 public class Mount extends GameObject {
 
@@ -30,4 +31,5 @@ public class Mount extends GameObject {
 
     // Binen oyuncu
     public String riderPlayerId;
+    public EquipmentContainer equipment;
 }

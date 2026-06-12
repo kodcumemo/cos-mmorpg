@@ -1,31 +1,26 @@
-package com.memokaa.cos.enumtype.character;
+package com.memokaa.cos.enumtype.item;
 
-/**
- * Ekipman Slotları
- */
 public enum EquipmentSlot {
 
-    HEAD,           // Kafa
+    HEAD,
+    CHEST,
+    LEGS,
+    HANDS,
+    FEET,
 
-    CHEST,          // Göğüs
+    MAIN_HAND,
+    OFF_HAND,
 
-    LEGS,           // Bacak
+    NECK,
+    RING_1,
+    RING_2,
 
-    FEET,           // Ayak
+    BELT,
+    CLOAK,
 
-    HANDS,          // Eldiven
+    PET,
 
-    MAIN_HAND,      // Ana El
-
-    OFF_HAND,       // Yan El
-
-    RING_1,         // Yüzük 1
-
-    RING_2,         // Yüzük 2
-
-    NECKLACE,       // Kolye
-
-    BRACELET,       // Bileklik
-
-    COSTUME         // Kostüm
+    SHIP_WEAPON,
+    SHIP_ARMOR,
+    SHIP_SAIL
 }

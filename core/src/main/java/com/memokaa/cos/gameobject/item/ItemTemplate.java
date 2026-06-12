@@ -3,6 +3,7 @@ package com.memokaa.cos.gameobject.item;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.memokaa.cos.enumtype.item.EquipmentSlot;
 import com.memokaa.cos.enumtype.item.ItemType;
 import com.memokaa.cos.gameobject.template.ObjectTemplate;
 
@@ -25,4 +26,6 @@ public class ItemTemplate extends ObjectTemplate {
 
     // Temel özellikler
     public List<ItemProperty> properties = new ArrayList<>();
+    // Takılabileceği slot
+    public EquipmentSlot equipmentSlot;
 }

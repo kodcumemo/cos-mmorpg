@@ -1,6 +1,10 @@
 package com.memokaa.cos.gameobject.pet;
 
 import com.memokaa.cos.gameobject.base.GameObject;
+import com.memokaa.cos.gameobject.effect.ActiveStatusEffect;
+import com.memokaa.cos.gameobject.equipment.EquipmentContainer;
+
+import java.util.List;
 
 public class Pet extends GameObject {
 
@@ -30,4 +34,6 @@ public class Pet extends GameObject {
 
     // Mevcut hedef
     public String targetId;
+    public EquipmentContainer equipment;
+    public List<ActiveStatusEffect> activeEffects;
 }

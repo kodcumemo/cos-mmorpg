@@ -1,21 +1,13 @@
 package com.memokaa.cos.gameobject.skill;
 
-import com.memokaa.cos.enumtype.character.SkillType;
-
 public class PlayerSkill {
 
-    // Skill Kimliği
-    public String id;
+    // Skill
+    public String skillId;
 
-    // Oyuncu Kimliği
-    public String playerId;
+    // Değer
+    public double value;
 
-    // Skill Türü
-    public SkillType skillType;
-
-    // Skill Seviyesi
-    public int level;
-
-    // Toplam XP
-    public long experience;
+    // Son gelişim zamanı
+    public long lastGainTime;
 }

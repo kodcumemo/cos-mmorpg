@@ -1,21 +1,23 @@
 package com.memokaa.cos.gameobject.skill;
 
-import com.memokaa.cos.enumtype.character.SkillType;
+import java.util.ArrayList;
+import java.util.List;
 
-public class SkillTemplate {
+import com.memokaa.cos.enumtype.skill.SkillCategory;
+import com.memokaa.cos.gameobject.template.ObjectTemplate;
 
-    // Skill Kimliği
-    public String id;
+public class SkillTemplate extends ObjectTemplate {
 
-    // Skill Türü
-    public SkillType skillType;
+    // Skill kategorisi
+    public SkillCategory category;
 
-    // İsim
-    public String name;
+    // Combat hesaplarında kullanılır mı
+    public boolean affectsCombat;
 
-    // Açıklama
-    public String description;
+    // Varsayılan skill cap
+    public double defaultCap = 100;
 
-    // Maksimum Seviye
-    public int maxLevel;
+    // Skillin verdiği bonuslar
+    public List<String> skillPropertyIds =
+        new ArrayList<>();
 }

@@ -3,6 +3,7 @@ package com.memokaa.cos.gameobject.monster;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.memokaa.cos.gameobject.ai.CreatureBehaviorType;
 import com.memokaa.cos.gameobject.template.ObjectTemplate;
 
 public class MonsterTemplate extends ObjectTemplate {
@@ -30,4 +31,28 @@ public class MonsterTemplate extends ObjectTemplate {
 
     // Kullanabileceği saldırılar
     public List<String> specialAttackIds = new ArrayList<>();
+    // Davranış tipi
+    public CreatureBehaviorType behaviorType;
+
+    // Kaçabilir mi
+    public boolean fleeEnabled;
+
+    // Kaçmaya başlayacağı can yüzdesi
+    public double fleeHealthPercent;
+
+    // Takip mesafesi
+    public double chaseRange;
+
+    // Doğduğu noktadan uzaklaşabileceği maksimum mesafe
+    public double leashRange;
+    // Berserk tetikleme yüzdesi
+    public double berserkHealthPercent;
+
+    // Berserk hasar bonusu
+    public double berserkDamageBonus;
+
+    // Berserk saldırı hızı bonusu
+    public double berserkAttackSpeedBonus;
+    // Davranış tipi
+
 }

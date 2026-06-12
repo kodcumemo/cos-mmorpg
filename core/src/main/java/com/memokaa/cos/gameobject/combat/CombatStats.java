@@ -1,58 +1,49 @@
 package com.memokaa.cos.gameobject.combat;
 
+/**
+ * Combat sırasında kullanılan
+ * son hesaplanmış değerler.
+ */
 public class CombatStats {
 
-    // Kimlik
-    public String id;
+    // Minimum hasar
+    public double minDamage;
 
-    // Sahip oyuncu / npc / monster
-    public String ownerId;
+    // Maksimum hasar
+    public double maxDamage;
 
-    // Maksimum Can
-    public int maxHealth;
+    // Kritik vurma şansı
+    public double criticalChance;
 
-    // Mevcut Can
-    public int currentHealth;
+    // Kritik hasar çarpanı
+    public double criticalMultiplier;
 
-    // Maksimum Mana
-    public int maxMana;
+    // Zırh delme
+    public double armorPenetration;
 
-    // Mevcut Mana
-    public int currentMana;
+    // Saldırı hızı
+    public double attackSpeed;
 
-    // Maksimum Stamina
-    public int maxStamina;
+    // Büyü yapma hızı
+    public double castSpeed;
 
-    // Mevcut Stamina
-    public int currentStamina;
+    // Hareket hızı
+    public double movementSpeed;
 
-    // Yakın Dövüş Hasarı
-    public int meleeDamage;
+    // Görüş mesafesi
+    public double visionRange;
 
-    // Menzilli Hasar
-    public int rangedDamage;
+    // Fiziksel zırhlar
+    public double slashArmor;
+    public double pierceArmor;
+    public double bluntArmor;
 
-    // Büyü Hasarı
-    public int magicDamage;
+    // Element dirençleri
+    public double fireResist;
+    public double iceResist;
+    public double lightningResist;
 
-    // Zırh
-    public int armor;
-
-    // Büyü Direnci
-    public int magicResistance;
-
-    // Kritik Şansı
-    public float criticalChance;
-
-    // Kritik Çarpanı
-    public float criticalMultiplier;
-
-    // Saldırı Hızı
-    public float attackSpeed;
-
-    // Hareket Hızı
-    public float movementSpeed;
-
-    // Görüş Mesafesi
-    public int visionRange;
+    public double holyResist;
+    public double shadowResist;
+    public double poisonResist;
 }

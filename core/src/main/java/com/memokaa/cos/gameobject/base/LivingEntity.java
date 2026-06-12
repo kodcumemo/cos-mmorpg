@@ -1,49 +1,90 @@
 package com.memokaa.cos.gameobject.base;
 
-import com.memokaa.cos.enumtype.character.CharacterStatus;
-import com.memokaa.cos.enumtype.character.CombatMode;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.memokaa.cos.gameobject.combat.CombatStats;
+import com.memokaa.cos.gameobject.effect.ActiveStatusEffect;
+import com.memokaa.cos.gameobject.equipment.EquipmentContainer;
 
 public abstract class LivingEntity extends GameObject {
 
-    // Sağlık
+    // ===== PRIMARY STATS =====
 
-    public int health;
+    // Fiziksel güç
+    public int strength;
 
-    public int maxHealth;
+    // Hız ve çeviklik
+    public int dexterity;
+
+    // Büyü gücü
+    public int intelligence;
+
+    // ===== RESOURCES =====
+
+    // Can
+    public double health;
+
+    // Maksimum can
+    public double maxHealth;
 
     // Mana
+    public double mana;
 
-    public int mana;
-
-    public int maxMana;
+    // Maksimum mana
+    public double maxMana;
 
     // Stamina
+    public double stamina;
 
-    public int stamina;
+    // Maksimum stamina
+    public double maxStamina;
 
-    public int maxStamina;
+    // ===== COMBAT =====
 
-    // Yenilenme
+    // Son hesaplanan combat değerleri
+    public CombatStats combatStats;
 
-    public int healthRegen;
+    // Aktif effectler
+    public List<ActiveStatusEffect> activeEffects =
+        new ArrayList<>();
 
-    public int manaRegen;
+    // Takılı ekipmanlar
+    public EquipmentContainer equipment;
 
-    public int staminaRegen;
+    // ===== TARGET =====
 
-    // Savaş
+    // Şu anki hedef
+    public String targetId;
 
-    public int damage;
+    // Son saldıran
+    public String lastAttackerId;
 
-    public int armor;
+    // En çok hasar veren
+    public String highestDamageDealerId;
 
-    public int attackSpeed;
+    // ===== STATE =====
 
-    public int moveSpeed;
+    // Ölü mü
+    public boolean dead;
 
-    // Durum
+    // War modu
+    public boolean warMode;
 
-    public CharacterStatus characterStatus;
+    // Gizlenmiş mi
+    public boolean hidden;
 
-    public CombatMode combatMode;
+    // ===== TIMERS =====
+
+    // Son combat zamanı
+    public long lastCombatTime;
+
+    // Son saldırı zamanı
+    public long lastAttackTime;
+
+    // Son büyü zamanı
+    public long lastSpellUseTime;
+
+    // Son skill zamanı
+    public long lastSkillUseTime;
 }

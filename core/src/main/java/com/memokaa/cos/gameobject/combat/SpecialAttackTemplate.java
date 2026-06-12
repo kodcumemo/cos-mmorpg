@@ -1,42 +1,21 @@
 package com.memokaa.cos.gameobject.combat;
 
-import com.memokaa.cos.enumtype.combat.SpecialAttackType;
+import com.memokaa.cos.gameobject.template.ObjectTemplate;
 
-public class SpecialAttackTemplate {
+public class SpecialAttackTemplate extends ObjectTemplate {
 
-    // Kimlik
-    public String id;
-
-    // Görünen isim
-    public String name;
-
-    // Açıklama
-    public String description;
-
-    // Özel saldırı tipi
-    public SpecialAttackType attackType;
-
-    // Gerekli skill
+    // Gereken skill
     public String requiredSkillId;
 
-    // Gerekli skill seviyesi
-    public int requiredSkillValue;
+    // Gereken skill seviyesi
+    public double requiredSkillValue;
 
-    // Cooldown saniye
-    public int cooldownSeconds;
-
-    // Mana maliyeti
-    public int manaCost;
+    // Cooldown
+    public double cooldown;
 
     // Stamina maliyeti
     public int staminaCost;
 
-    // Hasar çarpanı
-    public float damageMultiplier;
-
-    // Etki süresi
-    public int effectDurationSeconds;
-
-    // Menzil
-    public float range;
+    // Mana maliyeti
+    public int manaCost;
 }
