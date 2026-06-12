@@ -105,9 +105,38 @@ public class CombatFormulaService {
 
         checkFleeBehavior(defender);
 
-        // Adım 11
 
-        return null;
+        // Adım 11
+        /*
+         * Kullanılan skill için gain kontrolü.
+         *
+         * Örnek:
+         * Swordsmanship
+         * Magery
+         * Archery
+         * skillGainService.tryGainSkill(
+        player,
+        "SWORDSMANSHIP");
+         */
+/*
+Adım 12
+
+AttackResult
+
+AttackResult result =
+        new AttackResult();
+result.damage =
+        damage;
+ */
+        AttackResult result =
+            new AttackResult();
+
+        result.damage = damage;
+
+        result.critical =
+            damage.critical;
+
+        return result;
     }
 
     private void checkFleeBehavior(
