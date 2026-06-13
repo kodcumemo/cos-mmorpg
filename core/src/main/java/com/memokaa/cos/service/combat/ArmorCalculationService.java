@@ -1,18 +1,17 @@
 package com.memokaa.cos.service.combat;
 
-import com.memokaa.cos.enumtype.combat.DamageType;
-import com.memokaa.cos.gameobject.base.LivingEntity;
-
 public class ArmorCalculationService {
 
     /**
-     * Armor ve resistleri uygular.
+     * Armor azaltma formülü
      */
-    public double applyArmor(
+    public double calculateDamageAfterArmor(
         double damage,
-        LivingEntity defender,
-        DamageType damageType) {
+        double armor) {
 
-        return damage;
+        double reduction =
+            armor / (armor + 100.0);
+
+        return damage * (1.0 - reduction);
     }
 }

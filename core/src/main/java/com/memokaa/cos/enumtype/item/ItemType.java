@@ -1,82 +1,60 @@
 package com.memokaa.cos.enumtype.item;
 
-/**
- * Item'in gerçek türü
- */
 public enum ItemType {
 
-    // Silahlar
+    // ===== WEAPONS =====
 
-    SWORD,              // Kılıç
-    AXE,                // Balta
-    MACE,               // Topuz
-    DAGGER,             // Hançer
-    SPEAR,              // Mızrak
-    BOW,                // Yay
-    CROSSBOW,           // Arbalet
-    STAFF,              // Asa
+    WEAPON,
 
-    // Zırh
+    // ===== ARMOR =====
 
-    HELMET,             // Kask
-    CHEST,              // Göğüslük
-    LEGS,               // Pantolon
-    GLOVES,             // Eldiven
-    BOOTS,              // Bot
+    ARMOR,
 
-    SHIELD,             // Kalkan
+    SHIELD,
 
-    // Takı
+    // ===== JEWELRY =====
 
-    RING,               // Yüzük
-    NECKLACE,           // Kolye
-    BRACELET,           // Bileklik
+    JEWELRY,
 
-    // Sarf Malzemeleri
+    // ===== CONSUMABLE =====
 
-    FOOD,               // Yemek
-    POTION,             // İksir
-    BANDAGE,            // Bandaj
+    CONSUMABLE,
 
-    // Kaynaklar
+    // ===== RESOURCES =====
 
-    ORE,                // Maden
-    INGOT,              // Külçe
-    WOOD,               // Odun
-    CLOTH,              // Kumaş
-    LEATHER,            // Deri
-    FISH,               // Balık
+    RESOURCE,
 
-    // Meslek
+    // ===== CRAFTING =====
 
-    TOOL,               // Alet
+    TOOL,
 
-    // Ev
+    // ===== MAGIC =====
 
-    FURNITURE,          // Mobilya
-    DECORATION,         // Dekorasyon
+    SPELLBOOK,
 
-    // Yapı
+    SCROLL,
 
-    BUILDING_PART,      // Yapı Parçası
+    // ===== MOUNTS =====
 
-    // Gemi
+    MOUNT_TOKEN,
 
-    SHIP_PART,          // Gemi Parçası
+    // ===== PETS =====
 
-    // Evcil Hayvan
+    PET_TOKEN,
 
-    PET_ITEM,           // Evcil Hayvan Eşyası
+    // ===== SHIPS =====
 
-    // Binek
+    SHIP_PART,
 
-    MOUNT_ITEM,         // Binek Eşyası
+    // ===== HOUSING =====
 
-    // Görev
+    HOUSE_ADDON,
 
-    QUEST_ITEM,         // Görev Eşyası
+    // ===== QUEST =====
 
-    // Para
+    QUEST_ITEM,
 
-    CURRENCY            // Para Birimi
+    // ===== MISC =====
+
+    MISC
 }

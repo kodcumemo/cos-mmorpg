@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.memokaa.cos.gameobject.inventory.Inventory;
-import com.memokaa.cos.gameobject.living.LivingEntity;
+import com.memokaa.cos.gameobject.base.LivingEntity;
 import com.memokaa.cos.gameobject.skill.SkillInstance;
 
 public class Player extends LivingEntity {
@@ -15,8 +15,7 @@ public class Player extends LivingEntity {
     // Oyuncu adı
     public String playerName;
 
-    // Aktif skilller
-    public Map<String, SkillInstance> skills;
+    // Aktif skilller LivingEntity den miras alıyor
 
     // Tecrübe
     public long experience;

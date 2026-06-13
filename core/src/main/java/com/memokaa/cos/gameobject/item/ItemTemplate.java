@@ -23,6 +23,10 @@ public class ItemTemplate extends ObjectTemplate {
 
     // Ağırlık
     public double weight;
+    /**
+     * Armor profile template id
+     */
+    public String armorProfileTemplateId;
 
     // Temel özellikler
     public List<ItemProperty> properties = new ArrayList<>();

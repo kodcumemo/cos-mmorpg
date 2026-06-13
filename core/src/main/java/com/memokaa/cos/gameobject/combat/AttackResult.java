@@ -8,11 +8,36 @@ import java.util.List;
  */
 public class AttackResult {
 
+    /**
+     * Vuruş gerçekleşti mi
+     */
+    public boolean hit;
+
+    /**
+     * Kritik vurdu mu
+     */
+    public boolean critical;
+
+    /**
+     * Kaç damage vurdu
+     */
+    public double damage;
+
+    /**
+     * Kaç damage armor tarafından engellendi
+     */
+    public double blockedDamage;
+
+    /**
+     * Hedef öldü mü
+     */
+    public boolean targetDied;
+
     // Oluşan hasar
-    public DamageInstance damage;
+    //public DamageInstance damage;
 
     // Kritik vuruldu mu
-    public boolean critical;
+    //public boolean critical;
 
     // Iskalandı mı
     public boolean missed;

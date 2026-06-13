@@ -1,11 +1,15 @@
 package com.memokaa.cos.gameobject.base;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import com.memokaa.cos.gameobject.combat.CombatStats;
+import com.memokaa.cos.gameobject.combat.StatusEffectInstance;
 import com.memokaa.cos.gameobject.effect.ActiveStatusEffect;
 import com.memokaa.cos.gameobject.equipment.EquipmentContainer;
+import com.memokaa.cos.gameobject.skill.SkillInstance;
 
 public abstract class LivingEntity extends GameObject {
 
@@ -46,7 +50,11 @@ public abstract class LivingEntity extends GameObject {
     public CombatStats combatStats;
 
     // Aktif effectler
-    public List<ActiveStatusEffect> activeEffects =
+
+    /**
+     * Aktif durum etkileri.
+     */
+    public List<StatusEffectInstance> activeEffects =
         new ArrayList<>();
 
     // Takılı ekipmanlar
@@ -87,4 +95,52 @@ public abstract class LivingEntity extends GameObject {
 
     // Son skill zamanı
     public long lastSkillUseTime;
+
+    /**
+     * Karakterin sahip olduğu skilller.
+     */
+    /**
+     * Karakter skillleri.
+     *
+     * Key:
+     * SWORDSMANSHIP
+     * MAGERY
+     * PARRY
+     * TACTICS
+     */
+    public Map<String, SkillInstance> skills =
+        new HashMap<>();
+
+    /**
+     * Skill getir.
+     */
+    public SkillInstance getSkill(
+        String skillId) {
+
+        return skills.get(skillId);
+    }
+
+    /**
+     * Skill değeri getir.
+     */
+    public double getSkillValue(
+        String skillId) {
+
+        SkillInstance skill =
+            skills.get(skillId);
+
+        if(skill == null) {
+            return 0;
+        }
+
+        return skill.value;
+    }
+    /**
+     * Skill var mı?
+     */
+    public boolean hasSkill(
+        String skillId) {
+
+        return skills.containsKey(skillId);
+    }
 }

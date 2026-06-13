@@ -1,20 +1,23 @@
 package com.memokaa.cos.enumtype.combat;
 
+/**
+ * Status effect türleri.
+ */
 public enum StatusEffectType {
 
-    BLEEDING,      // Kanama
+    BLEED,      // Kanama
 
-    POISONED,      // Zehir
+    POISON,     // Zehir
 
-    BURNING,       // Yanma
+    BURN,       // Yanma
 
-    FROZEN,        // Donma
+    FREEZE,     // Donma
 
-    STUNNED,       // Sersemleme
+    SLOW,       // Yavaşlama
 
-    SLOWED,        // Yavaşlama
+    STUN,       // Sersemletme
 
-    BLIND,         // Körlük
+    SILENCE,    // Büyü susturma
 
-    SILENCED       // Büyü Kullanamaz
+    FEAR        // Korku
 }

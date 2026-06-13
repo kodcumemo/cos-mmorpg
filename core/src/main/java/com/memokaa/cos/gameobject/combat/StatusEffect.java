@@ -1,5 +1,7 @@
 package com.memokaa.cos.gameobject.combat;
 
+import com.memokaa.cos.enumtype.combat.StatusEffectType;
+
 public class StatusEffect {
 
     // Kimlik
