@@ -96,6 +96,12 @@ public abstract class LivingEntity extends GameObject {
     // Son skill zamanı
     public long lastSkillUseTime;
 
+    // Effectler
+    public boolean frozen;
+    public boolean slowed;
+    public boolean stunned;
+    public boolean silenced;
+    public boolean feared;
     /**
      * Karakterin sahip olduğu skilller.
      */

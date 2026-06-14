@@ -47,6 +47,10 @@ public class AttackResult {
 
     // Bloklandı mı
     public boolean blocked;
+    public boolean parried;
+
+    public boolean invalidAttack;
+
 
     // Uygulanan effectler
     public List<String> appliedEffects =

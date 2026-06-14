@@ -70,10 +70,7 @@ public class CombatStatsBuilder {
                 0.1,
                 stats.moveSpeed);
 
-        stats.hitChance =
-            Math.min(
-                100,
-                stats.hitChance);
+
 
         stats.criticalChance =
             Math.min(
@@ -110,8 +107,6 @@ public class CombatStatsBuilder {
 
         stats.magicArmor +=
             entity.intelligence * 0.10;
-
-        stats.hitChance = 75;
 
         stats.criticalMultiplier = 1.5;
 
@@ -152,6 +147,14 @@ public class CombatStatsBuilder {
 
         stats.maxDamage +=
             tactics * 0.08;
+
+        stats.parryChance =
+            parry * 0.20;
+
+        stats.dodgeChance =
+            Math.min(
+                20,
+                entity.dexterity * 0.15);
 
         stats.slashArmor +=
             parry * 0.10;

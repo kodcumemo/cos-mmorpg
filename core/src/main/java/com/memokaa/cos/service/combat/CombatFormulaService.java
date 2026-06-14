@@ -9,15 +9,29 @@ public class CombatFormulaService {
 
     private final ArmorCalculationService armorService;
 
+    private final DodgeCalculationService
+        dodgeService;
+
+    private final ParryCalculationService
+        parryService;
+
+    private final BlockCalculationService
+        blockService;
+
     public CombatFormulaService(
         CriticalCalculationService criticalService,
-        ArmorCalculationService armorService) {
+        ArmorCalculationService armorService, DodgeCalculationService dodgeService, ParryCalculationService parryService, BlockCalculationService blockService) {
 
         this.criticalService =
             criticalService;
 
         this.armorService =
             armorService;
+
+
+        this.dodgeService = dodgeService;
+        this.parryService = parryService;
+        this.blockService = blockService;
     }
 
     public AttackResult attack(
@@ -27,15 +41,65 @@ public class CombatFormulaService {
         AttackResult result =
             new AttackResult();
 
+        if(attacker.dead) {
+
+            result =
+                new AttackResult();
+
+            result.invalidAttack = true;
+
+            return result;
+        }
+
+        if(defender.dead) {
+
+            result =
+                new AttackResult();
+
+            result.invalidAttack = true;
+
+            return result;
+        }
+
+        //defender.health = defender.maxHealth;
         double min =
             attacker.combatStats.minDamage;
 
         double max =
             attacker.combatStats.maxDamage;
 
+        // Dodge
+        if(dodgeService.isDodged(defender)) {
+
+            result.dodged = true;
+
+            result.hit = false;
+
+            return result;
+        }
+        // parryleme
+        if(parryService.isParried(defender)) {
+
+            result.parried = true;
+
+            result.hit = false;
+
+            return result;
+        }
+
         double damage =
             min + Math.random()
                 * (max - min);
+
+        if(blockService.isBlocked(defender)) {
+
+            damage *=
+                (1 -
+                    defender.combatStats
+                        .blockReduction);
+
+            result.blocked = true;
+        }
 
         boolean critical =
             criticalService.isCritical(
@@ -50,6 +114,8 @@ public class CombatFormulaService {
 
         result.critical =
             critical;
+
+
 
         double finalDamage =
             armorService

@@ -1,51 +1,23 @@
 package com.memokaa.cos.gameobject.combat;
 
-/**
- * Aktif durum etkisi.
- */
+import com.memokaa.cos.enumtype.combat.StatusEffectType;
+
 public class StatusEffectInstance {
 
-    /**
-     * Template Id
-     */
-    public String statusEffectTemplateId;
+    // Efekti atan kişi
+    public String effectTemplateId;
 
-    /**
-     * Effecti uygulayan entity
-     */
-    public String sourceEntityId;
+    public StatusEffectType effectType;
 
-    /**
-     * Başlangıç zamanı
-     */
-    public long startTime;
-
-    /**
-     * Bitiş zamanı
-     */
-    public long endTime;
-
-    /**
-     * Etkin mi
-     */
-    public boolean active = true;
-
-    /**
-     * Güç değeri
-     */
     public double power;
 
-    /**
-     * Tick aralığı
-     *
-     * ms
-     */
+    public boolean active;
+
+    public long startTime;
+
+    public long endTime;
+
     public long tickInterval;
 
-    /**
-     * Son tick zamanı
-     */
     public long lastTickTime;
-
-
 }

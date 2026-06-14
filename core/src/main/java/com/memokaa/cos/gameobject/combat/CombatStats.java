@@ -43,11 +43,17 @@ public class CombatStats {
     // HIT
     // =========================
 
-    // İsabet şansı
-    public double hitChance;
-
-    // Kaçınma şansı
+    // Tamamen kaçınma
     public double dodgeChance;
+
+    // Silah veya kalkan ile karşılama
+    public double parryChance;
+
+    // Blok yapma ihtimali
+    public double blockChance;
+
+    // Blok gerçekleşirse azaltılacak oran
+    public double blockReduction;
 
     // =========================
     // ARMOR
