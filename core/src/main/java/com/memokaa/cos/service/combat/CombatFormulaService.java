@@ -2,6 +2,8 @@ package com.memokaa.cos.service.combat;
 
 import com.memokaa.cos.gameobject.base.LivingEntity;
 import com.memokaa.cos.gameobject.combat.AttackResult;
+import com.memokaa.cos.manager.item.ItemManager;
+import com.memokaa.cos.manager.template.TemplateManager;
 
 public class CombatFormulaService {
 
@@ -18,9 +20,22 @@ public class CombatFormulaService {
     private final BlockCalculationService
         blockService;
 
+    private final TemplateManager templateManager;
+
+    private final ItemManager itemManager;
+
+    private final StatusEffectService effectService;
+
     public CombatFormulaService(
         CriticalCalculationService criticalService,
-        ArmorCalculationService armorService, DodgeCalculationService dodgeService, ParryCalculationService parryService, BlockCalculationService blockService) {
+        ArmorCalculationService armorService,
+        DodgeCalculationService dodgeService,
+        ParryCalculationService parryService,
+        BlockCalculationService blockService,
+        TemplateManager templateManager,
+        ItemManager itemManager,
+        StatusEffectService effectService
+    ){
 
         this.criticalService =
             criticalService;
@@ -32,6 +47,9 @@ public class CombatFormulaService {
         this.dodgeService = dodgeService;
         this.parryService = parryService;
         this.blockService = blockService;
+        this.templateManager = templateManager;
+        this.itemManager = itemManager;
+        this.effectService = effectService;
     }
 
     public AttackResult attack(
@@ -148,6 +166,12 @@ public class CombatFormulaService {
         result.hit = true;
 
         return result;
+    }
+
+    private void tryApplyWeaponEffects(
+        LivingEntity attacker,
+        LivingEntity defender){
+
     }
 
 }

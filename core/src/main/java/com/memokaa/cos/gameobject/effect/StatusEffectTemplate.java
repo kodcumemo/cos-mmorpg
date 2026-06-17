@@ -1,30 +1,25 @@
 package com.memokaa.cos.gameobject.effect;
 
 import com.memokaa.cos.gameobject.template.ObjectTemplate;
+import com.memokaa.cos.enumtype.combat.StatusEffectType;
+public class StatusEffectTemplate
+    extends ObjectTemplate {
 
-public class StatusEffectTemplate extends ObjectTemplate {
+    public StatusEffectType effectType;
 
-    // Süre
     public double duration;
 
-    // Tick süresi
     public double tickInterval;
 
-    // Tick değeri
     public double tickValue;
 
-    // Stacklenebilir mi
     public boolean stackable;
 
-    // Maksimum stack
     public int maxStacks;
 
-    // Hareket çarpanı
     public double movementModifier;
 
-    // Cast çarpanı
     public double castModifier;
 
-    // Hasar çarpanı
     public double damageModifier;
 }

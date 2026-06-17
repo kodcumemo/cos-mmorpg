@@ -8,6 +8,9 @@ public class ItemProperty {
     // Property tipi
     public String propertyTypeId;
 
-    // Property değeri
+    // Değer
     public double value;
+
+    // İsteğe bağlı template bağlantısı
+    public String referenceTemplateId;
 }

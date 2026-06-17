@@ -49,5 +49,6 @@ public enum ItemPropertyType {
 
     BONUS_DURABILITY,           // Dayanıklılık
 
-    BONUS_WEIGHT_REDUCTION      // Ağırlık Azaltma
+    BONUS_WEIGHT_REDUCTION,      // Ağırlık Azaltma
+    APPLY_STATUS_EFFECT
 }

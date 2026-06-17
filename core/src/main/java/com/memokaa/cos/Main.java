@@ -163,7 +163,10 @@ public class Main extends ApplicationAdapter {
                 armorService,
                 dodgeService,
                 parryService,
-                blockService);
+                blockService,
+                templateManager,
+                itemManager,
+                effectService);
         defender.combatStats.dodgeChance = 20;
 
         defender.combatStats.parryChance = 30;

@@ -1,7 +1,11 @@
 package com.memokaa.cos.loader;
 
 import com.memokaa.cos.enumtype.combat.DamageType;
+import com.memokaa.cos.enumtype.combat.StatusEffectType;
+import com.memokaa.cos.enumtype.item.ItemPropertyType;
 import com.memokaa.cos.enumtype.item.ItemType;
+import com.memokaa.cos.gameobject.effect.StatusEffectTemplate;
+import com.memokaa.cos.gameobject.item.ItemProperty;
 import com.memokaa.cos.manager.template.TemplateManager;
 import com.memokaa.cos.gameobject.combat.ArmorProfileTemplate;
 import com.memokaa.cos.gameobject.item.ArmorTemplate;
@@ -75,7 +79,13 @@ public class TemplateLoader {
 
     private void loadStatusEffects() {
 
-        // TODO
+        registerPoisonI();
+
+        registerBleedI();
+
+        registerBurnI();
+
+        //registerFreezeI();
     }
 
     private void loadMonsters() {
@@ -89,6 +99,75 @@ public class TemplateLoader {
     }
 
     // Sanırım buradan aşağısı geçici olacak
+    // effectler (posion vs.)
+    private void registerPoisonI() {
+
+        StatusEffectTemplate effect =
+            new StatusEffectTemplate();
+
+        effect.id = "POISON_I";
+
+        effect.name = "Poison I";
+
+        effect.effectType =
+            StatusEffectType.POISON;
+
+        effect.duration = 10000;
+
+        effect.tickInterval = 1000;
+
+        effect.tickValue = 5;
+
+        templateManager.registerTemplate(
+            effect);
+    }
+
+    private void registerBleedI() {
+
+        StatusEffectTemplate effect =
+            new StatusEffectTemplate();
+
+        effect.id = "BLEED_I";
+
+        effect.name = "Bleed I";
+
+        effect.effectType =
+            StatusEffectType.BLEED;
+
+        effect.duration = 12000;
+
+        effect.tickInterval = 1000;
+
+        effect.tickValue = 3;
+
+        templateManager.registerTemplate(
+            effect);
+    }
+
+    private void registerBurnI() {
+
+        StatusEffectTemplate effect =
+            new StatusEffectTemplate();
+
+        effect.id = "BURN_I";
+
+        effect.name = "Burn I";
+
+        effect.effectType =
+            StatusEffectType.BURN;
+
+        effect.duration = 8000;
+
+        effect.tickInterval = 1000;
+
+        effect.tickValue = 4;
+
+        templateManager.registerTemplate(
+            effect);
+    }
+
+
+
     private void registerLeatherArmor() {
 
         ArmorProfileTemplate armor =
@@ -231,6 +310,22 @@ public class TemplateLoader {
         weapon.range = 1;
 
         weapon.armorPenetration = 7;
+
+        ItemProperty poison =
+            new ItemProperty();
+
+        poison.propertyTypeId =
+            ItemPropertyType
+                .APPLY_STATUS_EFFECT
+                .name();
+
+        poison.value = 25;
+
+        poison.referenceTemplateId =
+            "POISON_I";
+
+        weapon.properties.add(
+            poison);
 
         templateManager.registerTemplate(
             weapon);
