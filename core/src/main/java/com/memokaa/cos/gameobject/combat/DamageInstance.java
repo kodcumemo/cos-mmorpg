@@ -1,28 +1,46 @@
 package com.memokaa.cos.gameobject.combat;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.memokaa.cos.enumtype.combat.DamageType;
 
 /**
- * Oluşan hasarı temsil eder.
+ * Bir saldırı sonucu oluşan
+ * hasar bilgisi.
  */
 public class DamageInstance {
 
     // Ham hasar
     public double rawDamage;
 
-    // Son hasar
+    // Armor sonrası hasar
     public double finalDamage;
+
+    // Engellenen hasar
+    public double blockedDamage;
+
+    // Armor tarafından azaltılan
+    public double armorReduced;
+
+    // Damage tipi
+    public DamageType damageType;
 
     // Kritik mi
     public boolean critical;
 
-    // Hasar tipi
-    public DamageType damageType;
+    // Blocklandı mı
+    public boolean blocked;
 
-    // Uygulanan effectler
-    public List<String> appliedEffects =
-        new ArrayList<>();
+    // Dodge edildi mi
+    public boolean dodged;
+
+    // Parry edildi mi
+    public boolean parried;
+
+    // Armor penetration
+    public double armorPenetration;
+
+    // Kaynak silah
+    public String weaponTemplateId;
+
+    // Kaynak skill
+    public String skillTemplateId;
 }

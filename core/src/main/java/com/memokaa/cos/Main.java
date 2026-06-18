@@ -1,39 +1,22 @@
 package com.memokaa.cos;
 
 import com.badlogic.gdx.ApplicationAdapter;
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.ScreenUtils;
-import com.memokaa.cos.enumtype.combat.StatusEffectType;
+import com.memokaa.cos.gameobject.combat.AttackContext;
 import com.memokaa.cos.gameobject.combat.AttackResult;
-import com.memokaa.cos.gameobject.combat.StatusEffectInstance;
 import com.memokaa.cos.gameobject.player.Player;
 import com.memokaa.cos.loader.TemplateLoader;
 import com.memokaa.cos.loader.TestDataLoader;
 import com.memokaa.cos.manager.item.ItemManager;
 import com.memokaa.cos.manager.template.TemplateManager;
-import com.memokaa.cos.service.combat.ArmorCalculationService;
-import com.memokaa.cos.service.combat.BlockCalculationService;
-import com.memokaa.cos.service.combat.CombatFormulaService;
-import com.memokaa.cos.service.combat.CombatStatsBuilder;
-import com.memokaa.cos.service.combat.CriticalCalculationService;
-import com.memokaa.cos.service.combat.DodgeCalculationService;
-import com.memokaa.cos.service.combat.ParryCalculationService;
-import com.memokaa.cos.service.combat.StatusEffectService;
+import com.memokaa.cos.service.combat.*;
 
-/** {@link com.badlogic.gdx.ApplicationListener} implementation shared by all platforms. */
 public class Main extends ApplicationAdapter {
+
     private SpriteBatch batch;
     private Texture image;
-
-    TemplateManager templateManager =
-        new TemplateManager();
-    ItemManager itemManager =
-        new ItemManager();
-
-
 
     @Override
     public void create() {
@@ -43,18 +26,13 @@ public class Main extends ApplicationAdapter {
         image = new Texture("libgdx.png");
 
         runCombatTest();
-        TemplateLoader templateLoader =
-            new TemplateLoader(
-                templateManager);
-
-        templateLoader.loadAllTemplates();
-
-
     }
+
     private void runCombatTest() {
 
-        System.out.println("=== COMBAT TEST ===");
-
+        System.out.println("=================================");
+        System.out.println("      COMBAT SYSTEM TEST");
+        System.out.println("=================================");
 
         TemplateManager templateManager =
             new TemplateManager();
@@ -63,58 +41,18 @@ public class Main extends ApplicationAdapter {
             new ItemManager();
 
         TemplateLoader templateLoader =
-            new TemplateLoader(
-                templateManager);
+            new TemplateLoader(templateManager);
 
         templateLoader.loadAllTemplates();
 
-        System.out.println(
-            "Templates Loaded");
-
-        TestDataLoader testLoader =
-            new TestDataLoader(
-                itemManager);
+        TestDataLoader loader =
+            new TestDataLoader(itemManager);
 
         Player attacker =
-            testLoader.createWarrior();
+            loader.createWarrior();
 
         Player defender =
-            testLoader.createDefender();
-
-        StatusEffectService effectService =
-            new StatusEffectService();
-
-        StatusEffectInstance poison =
-            new StatusEffectInstance();
-
-        poison.effectType =
-            StatusEffectType.POISON;
-
-        poison.power = 5;
-
-        poison.active = true;
-
-        poison.startTime =
-            System.currentTimeMillis();
-
-        poison.endTime =
-            System.currentTimeMillis() + 10000;
-
-        poison.tickInterval =
-            1000;
-
-        poison.lastTickTime =
-            System.currentTimeMillis();
-
-        effectService.addEffect(
-            defender,
-            poison);
-
-        System.out.println(
-            attacker.name);
-
-        System.out.println(
-            defender.name);
+            loader.createDefender();
 
         CombatStatsBuilder statsBuilder =
             new CombatStatsBuilder(
@@ -127,136 +65,129 @@ public class Main extends ApplicationAdapter {
         defender.combatStats =
             statsBuilder.build(defender);
 
-        System.out.println(
-            "Attacker Min Damage: "
-                + attacker.combatStats.minDamage);
+        defender.combatStats.dodgeChance = 20;
+        defender.combatStats.parryChance = 20;
+        defender.combatStats.blockChance = 25;
+        defender.combatStats.blockReduction = 0.50;
 
-        System.out.println(
-            "Attacker Max Damage: "
-                + attacker.combatStats.maxDamage);
-
-        System.out.println(
-            "Attacker Attack Speed: "
-                + attacker.combatStats.attackSpeed);
-
-        System.out.println(
-            "Defender Slash Armor: "
-                + defender.combatStats.slashArmor);
-
-        System.out.println(
-            "Defender Pierce Armor: "
-                + defender.combatStats.pierceArmor);
+        DamageCalculationService damageService =
+            new DamageCalculationService(
+                templateManager,
+                itemManager);
 
         CriticalCalculationService criticalService =
             new CriticalCalculationService();
 
         ArmorCalculationService armorService =
             new ArmorCalculationService();
-        DodgeCalculationService dodgeService = new DodgeCalculationService();
-        ParryCalculationService parryService = new ParryCalculationService();
-        BlockCalculationService blockService = new BlockCalculationService();
 
+        DodgeCalculationService dodgeService =
+            new DodgeCalculationService();
+
+        ParryCalculationService parryService =
+            new ParryCalculationService();
+
+        BlockCalculationService blockService =
+            new BlockCalculationService();
+
+        StatusEffectService effectService =
+            new StatusEffectService();
+
+        WeaponEffectService weaponEffectService =
+            new WeaponEffectService(
+                templateManager,
+                itemManager,
+                effectService);
 
         CombatFormulaService combatService =
             new CombatFormulaService(
+                damageService,
                 criticalService,
                 armorService,
                 dodgeService,
                 parryService,
                 blockService,
-                templateManager,
-                itemManager,
-                effectService);
-        defender.combatStats.dodgeChance = 20;
+                weaponEffectService);
 
-        defender.combatStats.parryChance = 30;
+        int attackCount = 1;
 
-        defender.combatStats.blockChance = 40;
-
-        defender.combatStats.blockReduction = 0.50;
-
-
-        System.out.println(
-            "===== POISON TEST =====");
-
-        for(int i = 0; i < 15; i++) {
-
-            effectService.updateEffects(
-                defender,
-                System.currentTimeMillis());
-
-            System.out.println(
-                "HP: " + defender.health);
-
-            try {
-
-                Thread.sleep(1000);
-
-            } catch(Exception e) {
-
-                e.printStackTrace();
-            }
-        }
-      /*  System.out.println(
-            "===== DODGE TEST =====");
-
-        for(int i = 1; i <= 50; i++) {
-
-            //defender.health = defender.maxHealth;
+        while (!defender.dead) {
 
             AttackResult result =
                 combatService.attack(
                     attacker,
                     defender);
 
-            if(defender.dead) {
-
-                System.out.println(
-                    "Defender died.");
-
-                break;
-            }
+            System.out.println();
+            System.out.println("Attack #" + attackCount);
 
             if(result.invalidAttack) {
 
-                System.out.println(
-                    "Target already dead.");
-
+                System.out.println("Invalid Attack");
                 break;
             }
 
-            System.out.println(
-                "Attack #" + i);
+            if(result.dodged) {
 
-            System.out.println(
-                "Dodged: "
-                    + result.dodged);
+                System.out.println(">> DODGED");
+            }
+            else if(result.parried) {
 
-            System.out.println(
-                "Parried: "
-                    + result.parried);
+                System.out.println(">> PARRIED");
+            }
+            else {
 
-            System.out.println(
-                "Blocked: "
-                    + result.blocked);
+                if(result.blocked) {
 
-            System.out.println(
-                "Damage: "
-                    + result.damage);
+                    System.out.println(">> BLOCKED");
+                }
 
-            System.out.println(
-                "HP: "
-                    + defender.health);
+                if(result.critical) {
 
+                    System.out.println(">> CRITICAL");
+                }
 
-            System.out.println(
-                "----------------");
-        }*/
+                System.out.printf(
+                    "Damage : %.2f%n",
+                    result.damage);
+
+                System.out.printf(
+                    "HP     : %.2f / %.2f%n",
+                    defender.health,
+                    defender.maxHealth);
+
+                System.out.println(
+                    "Effects: " +
+                        defender.activeEffects.size());
+            }
+
+            attackCount++;
+
+            try {
+
+                Thread.sleep(700);
+
+            } catch (InterruptedException e) {
+
+                e.printStackTrace();
+            }
+        }
+
+        System.out.println();
+        System.out.println("==============================");
+        System.out.println("DEFENDER DIED!");
+        System.out.println("==============================");
     }
 
     @Override
     public void render() {
-        ScreenUtils.clear(0.15f, 0.15f, 0.2f, 1f);
+
+        ScreenUtils.clear(
+            0.15f,
+            0.15f,
+            0.2f,
+            1);
+
         batch.begin();
         batch.draw(image, 140, 210);
         batch.end();
@@ -264,6 +195,7 @@ public class Main extends ApplicationAdapter {
 
     @Override
     public void dispose() {
+
         batch.dispose();
         image.dispose();
     }

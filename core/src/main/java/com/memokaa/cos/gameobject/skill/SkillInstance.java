@@ -1,26 +1,44 @@
 package com.memokaa.cos.gameobject.skill;
 
-import com.memokaa.cos.enumtype.skill.SkillLockState;
-
 /**
- * Oyuncunun sahip olduğu bir skillin
- * mevcut durumunu temsil eder.
+ * Oyuncunun sahip olduğu gerçek skill.
  */
 public class SkillInstance {
 
-    // Skill template id
+    /**
+     * Skill Template ID.
+     */
     public String skillTemplateId;
 
-    // Güncel skill değeri
+    /**
+     * Mevcut skill değeri.
+     */
     public double value;
 
-    // Skill davranış durumu
-    public SkillLockState lockState =
-        SkillLockState.UP;
+    /**
+     * Skill için kazanılan deneyim.
+     */
+    public double experience;
 
-    // Son gain zamanı
+    /**
+     * Maksimum ulaşabileceği değer.
+     * (Power Scroll vb. sistemler için ayrı tutuluyor.)
+     */
+    public double maxValue;
+
+    /**
+     * Skill gain açık mı?
+     */
+    public boolean gainEnabled = true;
+
+    /**
+     * Skill kilitli mi?
+     */
+    public boolean locked;
+
+    /**
+     * Son gain zamanı.
+     * Anti macro sistemi için kullanılacak.
+     */
     public long lastGainTime;
-
-    // Toplam kullanım sayısı
-    public long usageCount;
 }

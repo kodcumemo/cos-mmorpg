@@ -74,7 +74,11 @@ public class TemplateLoader {
 
     private void loadSkills() {
 
-        // TODO
+        SkillLoader loader =
+            new SkillLoader(
+                templateManager);
+
+        loader.loadSkills();
     }
 
     private void loadStatusEffects() {

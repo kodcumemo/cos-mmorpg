@@ -1,23 +1,68 @@
 package com.memokaa.cos.gameobject.skill;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import com.memokaa.cos.enumtype.skill.SkillCategory;
 import com.memokaa.cos.gameobject.template.ObjectTemplate;
 
+/**
+ * Skill tanımı.
+ * Oyundaki bütün skilller Template olarak tutulur.
+ */
 public class SkillTemplate extends ObjectTemplate {
 
-    // Skill kategorisi
-    public SkillCategory category;
+    /**
+     * Combat
+     * Crafting
+     * Gathering
+     * Magic
+     * Utility
+     */
+    public String category;
 
-    // Combat hesaplarında kullanılır mı
-    public boolean affectsCombat;
+    /**
+     * Maksimum skill değeri.
+     * (100 / 120 / 200 vb.)
+     */
+    /**
+     * Başlangıç skill değeri.
+     */
+    public double defaultValue = 0;
 
-    // Varsayılan skill cap
-    public double defaultCap = 100;
+    /**
+     * Maksimum skill değeri.
+     */
+    public double maxValue = 100;
 
-    // Skillin verdiği bonuslar
-    public List<String> skillPropertyIds =
-        new ArrayList<>();
+    /**
+     * Her başarılı gain'de kaç puan kazanılır.
+     */
+    public double gainPerSuccess = 0.1;
+
+    /**
+     * Gain hızı çarpanı.
+     */
+    public double gainMultiplier = 1.0;
+
+    /**
+     * Pasif skill mi?
+     */
+    public boolean passive;
+
+    /**
+     * Combat skilli mi?
+     */
+    public boolean combatSkill;
+
+    /**
+     * Magic skilli mi?
+     */
+    public boolean magicSkill;
+
+    /**
+     * Gathering skilli mi?
+     */
+    public boolean gatheringSkill;
+
+    /**
+     * Crafting skilli mi?
+     */
+    public boolean craftingSkill;
 }

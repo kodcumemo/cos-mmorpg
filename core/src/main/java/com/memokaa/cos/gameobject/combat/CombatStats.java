@@ -42,6 +42,7 @@ public class CombatStats {
     // =========================
     // HIT
     // =========================
+    public double hitChance;
 
     // Tamamen kaçınma
     public double dodgeChance;
@@ -86,4 +87,6 @@ public class CombatStats {
     public double holyResist;
 
     public double shadowResist;
+    public double lightningResist;
+    public double arcaneResist;
 }

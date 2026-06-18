@@ -18,5 +18,6 @@ public enum DamageType {
 
     POISON,
 
-    MAGIC
+    MAGIC,
+    ARCANE
 }

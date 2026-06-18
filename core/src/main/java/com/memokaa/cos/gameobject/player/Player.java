@@ -17,6 +17,7 @@ public class Player extends LivingEntity {
 
     // Aktif skilller LivingEntity den miras alıyor
 
+
     // Tecrübe
     public long experience;
 
